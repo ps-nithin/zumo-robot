@@ -1,5 +1,5 @@
 # zumo-robot
-Zumo robot using Raspberry Pi
-######################################################
-Setup: Run `sudo pigpiod`
-Usage: Run `python keyboard.py`
+Zumo robot using Raspberry Pi <br>
+######################################################<br>
+Setup: Run `sudo pigpiod`<br>
+Usage: Run `python keyboard.py`<br>
