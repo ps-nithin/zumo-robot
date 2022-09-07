@@ -6,11 +6,11 @@ Setup: Run `sudo pigpiod`<br>
 Usage: Run `python keyboard.py`<br>
 ######################################################<br>
 Keyboard shortcuts:<br>
-UP Arrow: move forward<br>
-DOWN Arrow: move backward<br>
-LEFT Arrow: Spin clockwise<br>
-RIGHT Arrow: Spin anti-clockwise<br>
-SPACEBAR: Stop<br>
+Up Arrow: move forward<br>
+Down Arrow: move backward<br>
+Left Arrow: Spin clockwise<br>
+Right Arrow: Spin anti-clockwise<br>
+Spacebar: Stop<br>
 a: Accelerate<br>
 d: Decelerate<br>
 q: Quit program<br>
