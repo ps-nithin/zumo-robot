@@ -1,4 +1,4 @@
-	Zumo Robot - Materials used
+Zumo Robot - Materials used
 --------------------------------------------
 1. Raspberry Pi Zero W
 2. DRV8833 Motor Driver
