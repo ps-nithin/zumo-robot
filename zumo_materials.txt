@@ -1,0 +1,16 @@
+	Zumo Robot - Materials used
+--------------------------------------------
+1. Raspberry Pi Zero W
+2. DRV8833 Motor Driver
+3. Zumo Chassis		
+4. 2xMicro Metal Gearmotor
+5. 4xAA Battery		
+6. Stereo Enclosed speaker
+7. Adafruit Voice Bonnet
+8. Raspberry Pi Camera Module v2
+9. Syska Powerbank 5000Mah	
+10. Jumper wires		
+11. 64GB Sandisk MicroSD Card	
+12. 2.54mm 2x20 Pin Long Header	
+13. Pi Zero Camera Cable	
+--------------------------------------------
