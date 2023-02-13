@@ -3,13 +3,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>zumo robot</title>
 <script src="jquery-3.6.1.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!--<img id="streamImage" src="http://192.168.1.25:8080/?action=stream"/><br>
--->
+<div class="header_wrap">
+<div class="header_div">
+<div class="menu_item act_menu first_menu_item"><a href="index.php">Home</a>
+</div>
+</div></div>
+<div class="content_div">
+<!--
 <div id="snapshotDiv"><img id="snapshot" src="second.jpg" class="menu_item"></img></div><hr>
+-->
+<img id="mjpeg_dest" class="menu_item"></img>
+<hr>
 <button type="button" id="backward" class="menu_item">Backward</button>
 <button type="button" id="forward" class="menu_item">Forward</button><br>
 <button type="button" id="spin_cw" class="menu_item">Left</button>
@@ -31,5 +38,6 @@
 <button id="playMusic" class="menu_item">Play</button>
 <button id="stopMusic" class="menu_item">Stop</button><p>
 <script src="script.js"></script>
+</div>
 </body>
 </html>

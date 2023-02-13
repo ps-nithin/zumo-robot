@@ -2,9 +2,10 @@ let recorder,audio_stream;
 const preview=document.getElementById("audio-playback");
 const downloadAudio=document.getElementById("downloadButton");
 const snapshot=document.getElementById("snapshot");
+var mjpeg_img;
 
 $(document).ready(function(){
-
+  setTimeout('init();',100);
   $('#stopButton').attr("disabled",true);
   $('#forward').click(function(){
     this_=$(this);
@@ -95,7 +96,23 @@ $(document).ready(function(){
 
 });
 
+function reload_img(){
+  mjpeg_img.src="cam_pic.php?time="+new Date().getTime();
+}
+
+function error_img(){
+  setTimeout("mjpeg_img.src='cam_pic.php?time='+new Date().getTime();",100);
+}
+
+function init(){
+  mjpeg_img=document.getElementById("mjpeg_dest");
+  mjpeg_img.onload=reload_img;
+  mjpeg_img.onerror=error_img;
+  reload_img();
+}
+
 function updateImage(this_){
+  /*
   $.get({
     url: "get_image.php",
     cache: false,
@@ -104,6 +121,8 @@ function updateImage(this_){
     snapshot.src="second.jpg?t="+Math.random();
     this_.css("background-color","white");
   });
+  */
+  this_.css("background-color","white");
 }
 
 recordedChunks=[];
