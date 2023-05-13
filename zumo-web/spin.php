@@ -5,10 +5,10 @@ if(isset($_GET['angle'])){
 }else{
   $angle=20;
 }  
-if(!isset($_GET['dutycycle'])){
-  $dutycycle=255;
-}else{
+if(isset($_GET['dutycycle']) && !empty($_GET['dutycycle'])){
   $dutycycle=$_GET['dutycycle'];
+}else{
+  $dutycycle=255;
 }
 system("pigs pfs 23 50");
 system("pigs pfs 22 50");

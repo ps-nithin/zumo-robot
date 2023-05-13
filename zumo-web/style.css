@@ -29,6 +29,15 @@ margin:auto;
 margin-bottom:50px;
 margin-top:60px;
 }
+#dutycycle {
+width:9em;
+}
+#mjpeg_dest {
+width:auto;
+height: auto;
+display:block;
+margin:auto;
+}
 .content_div_inbox{
 max-width:800px;
 overflow:scroll;
@@ -47,6 +56,16 @@ border-top:1px solid lightgrey;
 .inbox_form{
 margin:0px;
 }
+.menu_item_motor{
+display:inline-block;
+padding:10px;
+margin:3px;
+margin-top:10px;
+background-color:white;
+border-radius:15px;
+border:1px solid lightgrey;
+}
+
 .menu_item{
 display:inline-block;
 padding:10px;

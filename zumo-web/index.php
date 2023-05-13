@@ -15,15 +15,15 @@
 <!--
 <div id="snapshotDiv"><img id="snapshot" src="second.jpg" class="menu_item"></img></div><hr>
 -->
-<img id="mjpeg_dest" class="menu_item"></img>
+<img id="mjpeg_dest" class=""></img>
 <hr>
-<button type="button" id="backward" class="menu_item">Backward</button>
-<button type="button" id="forward" class="menu_item">Forward</button><br>
-<button type="button" id="spin_cw" class="menu_item">Left</button>
-<button type="button" id="spin_acw" class="menu_item">Right</button><br>
-<button type="button" id="rotateButton" class="menu_item">Rotate</button>
-<input id="angle" class="menu_item" type="number" min="-180" max="180" placeholder="Angle ..."/><br>
-<button type="button" id="stop" class="menu_item">Stop</button>
+<button type="button" id="backward" class="menu_item_motor">Backward</button>
+<button type="button" id="forward" class="menu_item_motor">Forward</button><br>
+<button type="button" id="spin_cw" class="menu_item_motor">Left</button>
+<button type="button" id="spin_acw" class="menu_item_motor">Right</button><br>
+<button type="button" id="rotateButton" class="menu_item_motor">Rotate</button>
+<input id="angle" class="menu_item_motor" type="number" min="-180" max="180" placeholder="Angle ..."/><input id="dutycycle" class="menu_item_motor" type="number" min="0" max="255" placeholder="Speed : 0-255"/><br>
+<button type="button" id="stop" class="menu_item_motor">Stop</button>
 <button type="button" id="updateSnapshot" class="menu_item">Update image</button><hr>
 <textarea id="text_to_speak" placeholder="Say something ..." class="menu_item"></textarea><br>
 <button type="button" id="speak" class="menu_item">Speak!</button><hr>

@@ -4,7 +4,7 @@ if (isset($_GET['time'])){
 } else {
   $useconds=1000000;
 }
-if(isset($_GET['dutycycle'])){
+if(isset($_GET['dutycycle']) && !empty($_GET['dutycycle'])){
   $dutycycle=$_GET['dutycycle'];
 }else{
   $dutycycle=255;

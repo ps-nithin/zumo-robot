@@ -9,24 +9,27 @@ $(document).ready(function(){
   $('#stopButton').attr("disabled",true);
   $('#forward').click(function(){
     this_=$(this);
+    var s=$('#dutycycle').val();
     this_.css("background-color","lightblue");
-    $.get("forward.php",function(data,status_){
+    $.get("forward.php",{dutycycle: s},function(data,status_){
       updateImage(this_);
     });
   });
   $('#backward').click(function(){
     this_=$(this);
+    var s=$('#dutycycle').val();
     this_.css("background-color","lightblue");
-    $.get("backward.php",function(data,status_){
+    $.get("backward.php",{dutycycle:s},function(data,status_){
       updateImage(this_);
     });
   });
   $('#rotateButton').click(function(){
     this_=$(this);
     this_.css("background-color","lightblue");
+    var s=$('#dutycycle').val();
     var a=$('#angle').val();
     $.get("spin.php",
-	    {angle: a},
+	    {angle:a,dutycycle:s},
 	    function(data,status_){
             updateImage(this_);
     });
@@ -50,7 +53,7 @@ $(document).ready(function(){
     this_=$(this);
     this_.css("background-color","lightblue");
     $.get("stop.php",function(data,status_){
-      this_.css("background-color","white");
+	$('.menu_item_motor').css("background-color","white");
     });
   });
 
