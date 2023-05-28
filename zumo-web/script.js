@@ -38,14 +38,14 @@ $(document).ready(function(){
   $('#spin_cw').click(function(){
     this_=$(this);
     this_.css("background-color","lightblue");
-    $.get("spin.php",{angle:-10},function(data,status_){
+    $.get("spin.php",{angle:-15,dutycycle:255},function(data,status_){
       updateImage(this_);
     });
   });
   $('#spin_acw').click(function(){
     this_=$(this);
     this_.css("background-color","lightblue");
-    $.get("spin.php",{angle:10},function(data,status_){
+    $.get("spin.php",{angle:15,dutycycle:255},function(data,status_){
       updateImage(this_);
     });
   });
@@ -59,8 +59,15 @@ $(document).ready(function(){
 
   $('#speak').click(function(){
     text_to_speak=$('#text_to_speak').val();
+    if (text_to_speak.length==0){
+      return 0;
+    }
+    this_=$(this);
+    this_.prop("disabled",true);
+    this_.html("Playing ...");
     $.post("speak.php",{text: text_to_speak},function(status_){
-      ;
+      this_.prop("disabled",false);
+      this_.html("Speak!");
     });
   });
 
@@ -74,7 +81,8 @@ $(document).ready(function(){
     stopRecording();
   });
   $('#downloadButton').click(function(){
-    downloadRecording();
+    this_=$(this);
+    downloadRecording(this_);
   });
   $('#updateSnapshot').click(function(){ 
     $(this).css("background-color","lightblue");
@@ -83,17 +91,21 @@ $(document).ready(function(){
 
   $('#playMusic').click(function(){
     var url=$('#yt_link').val();
+    if (url.length==0){
+      return 0;
+    }
     this_=$(this);
-    $('#playMusic').css("background-color","lightblue");
     $('#playMusic').prop("disabled",true);
+    this_.html("Playing ...");
     $.get('play_music.php',{ytlink:url},function(data,status_){
-      this_.css("background-color","white");
       this_.prop("disabled",false);
+      this_.html("Play!");
     });
   });
   $('#stopMusic').click(function(){
     $.get('stop_music.php',function(data,status_){
       $('#playMusic').prop("disabled",false);
+      $('#playMusic').html("Play!");
     });
   });
 
@@ -159,12 +171,14 @@ function stopRecording(){
   audio_stream.getAudioTracks()[0].stop();
 }
 
-function downloadRecording(){
+function downloadRecording(this_){
   var name=new Date();
   var res=name.toISOString().slice(0,10);
   var fileName=res+'.wav';
   var fd=new FormData();
   fd.append("audio_data",voiceBlob,fileName);
+  this_.html("Playing ...");
+  this_.prop("disabled",true);
   $.ajax({
     url: "voice.php",
     method: "POST",
@@ -173,11 +187,12 @@ function downloadRecording(){
     data: fd,
     enctype: 'multipart/form-data',
     success: function(data){
-        alert(data);
+	this_.prop("disabled",false);
+	this_.html("Send audio!");
     },
     error: function(err){
       ;
     }
   });
-  location.reload();
+  //location.reload();
 }

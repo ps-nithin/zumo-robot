@@ -9,17 +9,10 @@ if(isset($_GET['dutycycle']) && !empty($_GET['dutycycle'])){
 }else{
   $dutycycle=255;
 }
-system("pigs pfs 24 50");
-system("pigs pfs 22 50");
-system("pigs pfs 23 50");
-system("pigs pfs 27 50");
-system("pigs p 24 $dutycycle");
-system("pigs p 22 $dutycycle");
-system("pigs p 23 0");
-system("pigs p 27 0");
+system("pigs pfs 24 100 pfs 22 100");
+system("pigs p 24 $dutycycle p 22 $dutycycle");
 usleep($useconds);
-system("pigs p 24 0");
-system("pigs p 22 0");
+system("pigs p 24 0 p 22 0");
 $UPTIME_MOTORS="/home/pi/uptime_motors.txt";
 $utfile=fopen($UPTIME_MOTORS,'r');
 $ut_pre=fread($utfile,filesize($UPTIME_MOTORS));
